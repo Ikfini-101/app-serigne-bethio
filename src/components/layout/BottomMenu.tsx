@@ -109,6 +109,34 @@ const BottomMenu: React.FC = () => {
               position: 'relative',
               width: '100%',
             }}>
+              {/* Logo circulaire à gauche */}
+              <Link to="/" style={{ textDecoration: 'none', flexShrink: 0, paddingLeft: '4px', paddingRight: '8px' }}>
+                <div style={{
+                  width: '34px',
+                  height: '34px',
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: '2px solid rgba(135,206,235,0.7)',
+                  boxShadow: '0 0 10px rgba(135,206,235,0.4)',
+                  flexShrink: 0,
+                }}>
+                  <img
+                    src="/assets/background-image-cheikh-bethio-1.png"
+                    alt="Cheikh Bethio"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 15%',
+                      display: 'block',
+                    }}
+                  />
+                </div>
+              </Link>
+
+              {/* Séparateur */}
+              <div style={{ width: '1px', height: '24px', background: 'rgba(135,206,235,0.4)', flexShrink: 0 }} />
+
               {NAV.map(({ path, label, icon: Icon }) => {
                 const active = location.pathname === path;
                 return (

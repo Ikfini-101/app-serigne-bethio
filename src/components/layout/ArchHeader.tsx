@@ -80,62 +80,6 @@ const ArchHeader: React.FC = () => {
             'linear-gradient(to bottom, rgba(253,251,247,0.08) 0%, rgba(253,251,247,0.55) 68%, rgba(253,251,247,0.92) 92%)',
         }} />
 
-        {/* Titre */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1.2 }}
-          style={{
-            position: 'absolute',
-            top: '40%', left: 0, right: 0,
-            margin: '0 auto',
-            zIndex: 3,
-            textAlign: 'center',
-            width: '90%',
-            maxWidth: '680px',
-          }}
-        >
-          <div style={{ padding: '2rem 1rem' }}>
-            <h1
-              className="shimmer-text serif"
-              style={{
-                fontSize: 'clamp(2rem, 5vw, 3.8rem)',
-                lineHeight: 1.1,
-                marginBottom: '0.8rem',
-                textShadow: '0 4px 24px rgba(255,255,255,0.6)',
-              }}
-            >
-              Cheikh Serigne Béthio Thioune
-            </h1>
-            <p style={{
-              color: 'var(--charcoal)',
-              fontSize: '1.1rem',
-              letterSpacing: '4px',
-              textTransform: 'uppercase',
-              fontWeight: 600,
-              textShadow: '0 2px 12px rgba(255,255,255,0.8)',
-            }}>
-              La Voie du Thiant
-            </p>
-
-            {/* Dots carrousel */}
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', marginTop: '1.2rem' }}>
-              {PHOTOS.map((_, i) => (
-                <motion.button
-                  key={i}
-                  onClick={() => setIdx(i)}
-                  animate={{ width: i === idx ? 24 : 8, opacity: i === idx ? 1 : 0.4 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                  style={{
-                    height: '8px', borderRadius: '4px',
-                    background: i === idx ? 'var(--sky-deep)' : 'rgba(135,206,235,0.3)',
-                    border: 'none', cursor: 'pointer', padding: 0,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* ── Bordure + atome d'hydrogène — superposé sur tout le container ── */}

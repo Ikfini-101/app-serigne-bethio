@@ -31,12 +31,13 @@ const BottomMenu: React.FC = () => {
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: 'spring' as const, stiffness: 260, damping: 24 }}
           style={{
-            /* Centrage absolu bulletproof — pas de left/right, pas de scrollbar bug */
             position: 'fixed',
             bottom: '28px',
-            left: '50%',
-            marginLeft: '-min(47vw, 340px)', /* déplace de la moitié de la largeur SANS transform */
-            width: 'min(94vw, 680px)',
+            left: 0,
+            right: 0,
+            margin: '0 auto',
+            width: '90%',
+            maxWidth: '680px',
             zIndex: 100,
           }}
         >

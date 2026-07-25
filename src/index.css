@@ -1,64 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
 
-:root {
-  --gold: #C9A84C;
-  --gold-light: #E5CD7A;
-  --gold-dark: #A38435;
-  --green-dark: #1A3A2A;
-  --green-very-dark: #0D2117;
-  --cream: #FAF5E9;
-  --charcoal: #1C1C1E;
-  --green-soft: #2D6A4F;
-  --white-glass: rgba(255, 255, 255, 0.08);
-  --dark-glass: rgba(26, 58, 42, 0.6);
-  --darker-glass: rgba(13, 33, 23, 0.85);
+/* ── CSS Custom Properties animées ── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  /* Palette autorisée */
+  --white:        #FFFFFF;
+  --beige:        #F5ECD7;
+  --beige-light:  #FBF7F0;
+  --beige-mid:    #EDE0C8;
+  --sky:          #87CEEB;
+  --sky-deep:     #4A90D9;
+  --sky-pale:     #D4EEFF;
+  --charcoal:     #1a1a2e;
+
+  /* Liquid morphism tokens */
+  --glass-white:  rgba(255, 255, 255, 0.10);
+  --glass-beige:  rgba(245, 236, 215, 0.12);
+  --glass-sky:    rgba(135, 206, 235, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.25);
+  --glass-glow:   rgba(135, 206, 235, 0.20);
+  --blur:         blur(40px) saturate(200%);
 }
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--green-very-dark);
-  color: var(--cream);
+  background: linear-gradient(160deg, #0f0c29 0%, #1a1a3e 40%, #0d2137 100%);
+  color: var(--beige);
   overflow-x: hidden;
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6, .font-arabic {
+h1, h2, h3, h4, h5, h6, .serif {
   font-family: 'Amiri', serif;
 }
 
-/* Transitions and utilities */
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 20s ease-in-out;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0;
-  transition: opacity 20s ease-in-out;
+a { text-decoration: none; color: inherit; }
+button { font-family: 'Inter', sans-serif; }
+
+/* ── LIQUID MORPHISM — classe universelle ── */
+.liquid {
+  background: var(--glass-white);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255,255,255,0.05) inset,
+    0 2px 0 rgba(255,255,255,0.15) inset;
 }
 
-/* Glassmorphism */
-.glass-panel {
-  background: var(--dark-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(201, 168, 76, 0.15); /* subtle gold border */
+.liquid-sky {
+  background: var(--glass-sky);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid rgba(135, 206, 235, 0.30);
+  box-shadow:
+    0 8px 32px rgba(74, 144, 217, 0.20),
+    inset 0 1px 0 rgba(255,255,255,0.30);
 }
 
-/* Arch Shape */
-.arch-clip {
-  /* Creating an arch shape at the bottom of the header */
-  clip-path: path('M 0 0 L 100% 0 L 100% 70% Q 50% 120% 0 70% Z');
-  /* Note: clip-path using path with percentages isn't fully supported without SVG, so we use a simpler polygon or SVG mask in the component */
+.liquid-beige {
+  background: var(--glass-beige);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid rgba(245, 236, 215, 0.30);
+  box-shadow:
+    0 8px 32px rgba(245, 236, 215, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.25);
 }
+
+/* ── BLOBS ANIMÉS ── */
+@keyframes blob1 {
+  0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0,0) scale(1); }
+  33%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; transform: translate(30px,-20px) scale(1.05); }
+  66%     { border-radius: 50% 60% 30% 70% / 30% 50% 70% 60%; transform: translate(-20px,15px) scale(0.97); }
+}
+@keyframes blob2 {
+  0%,100% { border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%; transform: translate(0,0) scale(1); }
+  33%     { border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%; transform: translate(-25px,20px) scale(1.08); }
+  66%     { border-radius: 50% 50% 40% 60% / 50% 40% 60% 50%; transform: translate(15px,-10px) scale(0.95); }
+}
+@keyframes blob3 {
+  0%,100% { border-radius: 50% 50% 40% 60% / 30% 70% 50% 50%; transform: translate(0,0) scale(1); }
+  50%     { border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%; transform: translate(20px,25px) scale(1.1); }
+}
+
+.blob {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  opacity: 0.35;
+}
+.blob-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, var(--sky) 0%, transparent 70%);
+  top: -100px; left: -100px;
+  animation: blob1 18s ease-in-out infinite;
+}
+.blob-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--beige) 0%, transparent 70%);
+  top: 30%; right: -80px;
+  animation: blob2 22s ease-in-out infinite;
+}
+.blob-3 {
+  width: 350px; height: 350px;
+  background: radial-gradient(circle, var(--sky-deep) 0%, transparent 70%);
+  bottom: 10%; left: 20%;
+  animation: blob3 16s ease-in-out infinite;
+}
+
+/* ── GRADIENT BORDER ANIMÉ ── */
+@keyframes rotate-border { to { --angle: 360deg; } }
+.animated-border {
+  background: conic-gradient(from var(--angle), var(--sky), var(--beige), var(--white), var(--sky-deep), var(--sky));
+  animation: rotate-border 4s linear infinite;
+  padding: 1.5px;
+  border-radius: 50px;
+}
+.animated-border-inner {
+  background: rgba(15, 12, 41, 0.95);
+  backdrop-filter: var(--blur);
+  border-radius: 48px;
+  padding: 12px 28px;
+}
+
+/* ── ANIMATIONS PAGE ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--beige) 0%, var(--white) 40%, var(--sky) 60%, var(--beige) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(135,206,235,0.3); border-radius: 3px; }

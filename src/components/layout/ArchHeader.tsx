@@ -110,20 +110,14 @@ const ArchHeader: React.FC = () => {
           maxWidth: '680px',
         }}
       >
-        {/* Panneau liquid morphism (Light) */}
+        {/* Conteneur du texte sans fond pour ne pas cacher la photo */}
         <div style={{
-          background: 'rgba(255,255,255,0.85)',
-          backdropFilter: 'blur(24px) saturate(180%)',
-          WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-          border: '1px solid rgba(255,255,255,1)',
-          borderRadius: '24px',
-          padding: '2rem 3rem',
-          boxShadow: '0 8px 32px rgba(135,206,235,0.4), inset 0 1px 0 rgba(255,255,255,0.8)',
+          padding: '2rem 1rem',
         }}>
-          <h1 className="shimmer-text serif" style={{ fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', lineHeight: 1.2, marginBottom: '0.6rem' }}>
+          <h1 className="shimmer-text serif" style={{ fontSize: 'clamp(2rem, 5vw, 3.8rem)', lineHeight: 1.1, marginBottom: '0.8rem', textShadow: '0 4px 24px rgba(255,255,255,0.6)' }}>
             Cheikh Serigne Béthio Thioune
           </h1>
-          <p style={{ color: 'var(--charcoal)', fontSize: '1rem', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 500 }}>
+          <p style={{ color: 'var(--charcoal)', fontSize: '1.1rem', letterSpacing: '4px', textTransform: 'uppercase', fontWeight: 600, textShadow: '0 2px 12px rgba(255,255,255,0.8)' }}>
             La Voie du Thiant
           </p>
 

@@ -121,7 +121,7 @@ const BottomMenu: React.FC = () => {
                   flexShrink: 0,
                 }}>
                   <img
-                    src="/assets/background-image-cheikh-bethio-1.png"
+                    src="/assets/favicon-serigne-cheikh-bethio.png"
                     alt="Cheikh Bethio"
                     style={{
                       width: '100%',

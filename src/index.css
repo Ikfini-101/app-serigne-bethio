@@ -33,7 +33,13 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #FDFBF7; /* Couleur lait */
+  background-color: #FDFBF7; /* Couleur lait */
+  background-image: 
+    linear-gradient(rgba(253, 251, 247, 0.93), rgba(253, 251, 247, 0.93)),
+    url('/assets/background-image-cheikh-bethio-1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--charcoal);
   overflow-x: hidden;
   min-height: 100vh;

@@ -53,12 +53,12 @@ const Home: React.FC = () => (
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               style={{
                 padding: '2rem',
-                borderRadius: '20px',
-                background: 'rgba(255,255,255,0.85)',
-                backdropFilter: 'blur(40px) saturate(200%)',
-                WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-                border: `1px solid rgba(255,255,255,1)`,
-                boxShadow: `0 8px 32px rgba(135,206,235,0.25), inset 0 1px 0 rgba(255,255,255,0.8)`,
+                borderRadius: '24px',
+                background: 'rgba(255,255,255,0.12)',
+                backdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
+                WebkitBackdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
+                border: '1px solid rgba(255,255,255,0.55)',
+                boxShadow: `0 4px 6px rgba(0,0,0,0.04), 0 12px 40px rgba(135,206,235,0.20), inset 0 1.5px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(135,206,235,0.12)`,
                 cursor: 'pointer',
               }}
             >
@@ -86,11 +86,11 @@ const Home: React.FC = () => (
       style={{
         padding: '2.5rem',
         borderRadius: '24px',
-        background: 'rgba(255,255,255,0.85)',
-        backdropFilter: 'blur(40px) saturate(180%)',
-        WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-        border: '1px solid rgba(135,206,235,0.50)',
-        boxShadow: '0 8px 32px rgba(135,206,235,0.2), inset 0 1px 0 rgba(255,255,255,1)',
+        background: 'rgba(255,255,255,0.10)',
+        backdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
+        WebkitBackdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
+        border: '1px solid rgba(255,255,255,0.55)',
+        boxShadow: '0 4px 6px rgba(0,0,0,0.04), 0 12px 40px rgba(135,206,235,0.18), inset 0 1.5px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(135,206,235,0.12)',
         marginBottom: '6rem',
       }}
     >

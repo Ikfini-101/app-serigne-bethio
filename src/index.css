@@ -18,13 +18,13 @@
   --sky-pale:     #D4EEFF;
   --charcoal:     #1a1a2e;
 
-  /* Liquid morphism tokens (Light Mode) */
-  --glass-white:  rgba(255, 255, 255, 0.85);
-  --glass-beige:  rgba(251, 247, 240, 0.85);
-  --glass-sky:    rgba(240, 248, 255, 0.85);
-  --glass-border: rgba(255, 255, 255, 1);
-  --glass-glow:   rgba(135, 206, 235, 0.40);
-  --blur:         blur(20px) saturate(150%);
+  /* Liquid Glass tokens — style Apple WWDC 2025 */
+  --glass-white:  rgba(255, 255, 255, 0.12);
+  --glass-beige:  rgba(253, 251, 247, 0.10);
+  --glass-sky:    rgba(212, 238, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-glow:   rgba(135, 206, 235, 0.35);
+  --blur:         blur(60px) saturate(220%) brightness(1.05);
 }
 
 /* ── Reset ── */
@@ -53,35 +53,42 @@ h1, h2, h3, h4, h5, h6, .serif {
 a { text-decoration: none; color: inherit; }
 button { font-family: 'Inter', sans-serif; }
 
-/* ── LIQUID MORPHISM — classe universelle ── */
+/* ── LIQUID GLASS — style Apple WWDC 2025 ── */
 .liquid {
   background: var(--glass-white);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   border: 1px solid var(--glass-border);
   box-shadow:
-    0 8px 32px var(--glass-glow),
-    0 0 0 1px rgba(255,255,255,0.8) inset;
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 40px rgba(135,206,235,0.18),
+    0 0 0 0.5px rgba(255,255,255,0.6) inset,
+    inset 0 1.5px 0 rgba(255,255,255,0.85),
+    inset 0 -1px 0 rgba(135,206,235,0.15);
 }
 
 .liquid-sky {
   background: var(--glass-sky);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-  border: 1px solid rgba(135, 206, 235, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow:
-    0 8px 32px var(--glass-glow),
-    inset 0 1px 0 rgba(255,255,255,0.9);
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 40px rgba(135,206,235,0.22),
+    inset 0 1.5px 0 rgba(255,255,255,0.85),
+    inset 0 -1px 0 rgba(135,206,235,0.12);
 }
 
 .liquid-beige {
   background: var(--glass-beige);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
-  border: 1px solid rgba(245, 236, 215, 0.80);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow:
-    0 8px 32px var(--glass-glow),
-    inset 0 1px 0 rgba(255,255,255,0.9);
+    0 4px 6px rgba(0,0,0,0.04),
+    0 12px 40px rgba(135,206,235,0.18),
+    inset 0 1.5px 0 rgba(255,255,255,0.85),
+    inset 0 -1px 0 rgba(245,236,215,0.15);
 }
 
 /* ── BLOBS ANIMÉS ── */

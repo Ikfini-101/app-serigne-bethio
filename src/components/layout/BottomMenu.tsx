@@ -26,10 +26,10 @@ const BottomMenu: React.FC = () => {
       {visible && (
         <motion.div
           key="bottom-menu"
-          initial={{ y: 100, opacity: 0 }}
+          initial={{ y: 15, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: 'spring' as const, stiffness: 260, damping: 24 }}
+          exit={{ y: 15, opacity: 0 }}
+          transition={{ duration: 1.2, ease: 'easeInOut' }}
           style={{
             position: 'fixed',
             bottom: '28px',

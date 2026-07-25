@@ -62,11 +62,25 @@ const RightMenu: React.FC = () => {
               boxShadow: '-4px 0 6px rgba(0,0,0,0.04), -8px 0 48px rgba(135,206,235,0.22), inset 0 1.5px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(135,206,235,0.12)',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.2rem', opacity: 0.8 }}>
-              <ChevronLeft size={14} color="var(--sky-deep)" />
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--sky-deep)' }}>
-                Navigation
-              </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.2rem' }}>
+              {/* Logo circulaire */}
+              <div style={{
+                width: '32px', height: '32px', borderRadius: '50%', overflow: 'hidden',
+                border: '1.5px solid rgba(135,206,235,0.7)',
+                boxShadow: '0 0 8px rgba(135,206,235,0.4)', flexShrink: 0,
+              }}>
+                <img
+                  src="/assets/favicon-round.png"
+                  alt="Cheikh Bethio"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', opacity: 0.8 }}>
+                <ChevronLeft size={14} color="var(--sky-deep)" />
+                <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--sky-deep)' }}>
+                  Navigation
+                </span>
+              </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>

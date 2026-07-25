@@ -53,18 +53,18 @@ const RightMenu: React.FC = () => {
             style={{
               position: 'absolute', right: '16px',
               width: '240px',
-              background: 'rgba(255,255,255,0.07)',
+              background: 'rgba(255,255,255,0.85)',
               backdropFilter: 'blur(40px) saturate(200%)',
               WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-              border: '1px solid rgba(255,255,255,0.18)',
+              border: '1px solid rgba(255,255,255,1)',
               borderRadius: '20px',
               padding: '1.8rem 1.2rem',
-              boxShadow: '-8px 0 40px rgba(135,206,235,0.12), inset 0 1px 0 rgba(255,255,255,0.2)',
+              boxShadow: '-8px 0 40px rgba(135,206,235,0.3), inset 0 1px 0 rgba(255,255,255,0.8)',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.2rem', opacity: 0.5 }}>
-              <ChevronLeft size={14} color="var(--sky)" />
-              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--sky)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.2rem', opacity: 0.8 }}>
+              <ChevronLeft size={14} color="var(--sky-deep)" />
+              <span style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--sky-deep)' }}>
                 Navigation
               </span>
             </div>
@@ -81,17 +81,17 @@ const RightMenu: React.FC = () => {
                   >
                     <Link to={path} style={{ textDecoration: 'none' }}>
                       <motion.div
-                        whileHover={{ x: -4, backgroundColor: 'rgba(135,206,235,0.12)' }}
+                        whileHover={{ x: -4, backgroundColor: 'rgba(135,206,235,0.15)' }}
                         style={{
                           display: 'flex', alignItems: 'center', gap: '12px',
                           padding: '10px 12px', borderRadius: '12px',
-                          background: active ? 'rgba(135,206,235,0.15)' : 'transparent',
-                          border: active ? '1px solid rgba(135,206,235,0.25)' : '1px solid transparent',
+                          background: active ? 'rgba(135,206,235,0.25)' : 'transparent',
+                          border: active ? '1px solid rgba(135,206,235,0.4)' : '1px solid transparent',
                           cursor: 'pointer',
                         }}
                       >
-                        <Icon size={18} color={active ? 'var(--sky)' : 'rgba(245,236,215,0.7)'} />
-                        <span style={{ color: active ? 'var(--sky)' : 'rgba(245,236,215,0.8)', fontSize: '0.95rem' }}>
+                        <Icon size={18} color={active ? 'var(--sky-deep)' : 'var(--charcoal)'} style={{ opacity: active ? 1 : 0.6 }} />
+                        <span style={{ color: active ? 'var(--sky-deep)' : 'var(--charcoal)', fontSize: '0.95rem', fontWeight: active ? 600 : 400, opacity: active ? 1 : 0.6 }}>
                           {label}
                         </span>
                       </motion.div>

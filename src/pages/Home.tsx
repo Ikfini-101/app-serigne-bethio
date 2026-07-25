@@ -27,12 +27,12 @@ const Home: React.FC = () => (
       transition={{ duration: 0.8 }}
       style={{ marginBottom: '3.5rem' }}
     >
-      <h2 className="serif" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--white)', marginBottom: '1rem' }}>
+      <h2 className="serif" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--charcoal)', marginBottom: '1rem' }}>
         Bienvenue sur ce site
       </h2>
-      <p style={{ fontSize: '1.15rem', lineHeight: '1.9', color: 'rgba(245,236,215,0.85)', maxWidth: '680px' }}>
+      <p style={{ fontSize: '1.15rem', lineHeight: '1.9', color: 'var(--charcoal)', maxWidth: '680px', opacity: 0.85 }}>
         Ce site est dédié à la vie, l'œuvre et l'héritage de{' '}
-        <strong style={{ color: 'var(--sky)' }}>Cheikh Serigne Béthio Thioune</strong>.
+        <strong style={{ color: 'var(--sky-deep)' }}>Cheikh Serigne Béthio Thioune</strong>.
         Découvrez son parcours exceptionnel, son engagement pour le Mouridisme et la voie sacrée du Thiant.
       </p>
     </motion.div>
@@ -54,22 +54,22 @@ const Home: React.FC = () => (
               style={{
                 padding: '2rem',
                 borderRadius: '20px',
-                background: 'rgba(255,255,255,0.06)',
+                background: 'rgba(255,255,255,0.85)',
                 backdropFilter: 'blur(40px) saturate(200%)',
                 WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-                border: `1px solid rgba(255,255,255,0.15)`,
-                boxShadow: `0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.15)`,
+                border: `1px solid rgba(255,255,255,1)`,
+                boxShadow: `0 8px 32px rgba(135,206,235,0.25), inset 0 1px 0 rgba(255,255,255,0.8)`,
                 cursor: 'pointer',
               }}
             >
-              <div style={{ width: '40px', height: '3px', borderRadius: '2px', background: c.color, marginBottom: '1.2rem' }} />
-              <h3 className="serif" style={{ color: c.color, fontSize: '1.8rem', marginBottom: '0.6rem' }}>
+              <div style={{ width: '40px', height: '3px', borderRadius: '2px', background: c.color === 'var(--sky-pale)' ? 'var(--sky-deep)' : c.color, marginBottom: '1.2rem' }} />
+              <h3 className="serif" style={{ color: c.color === 'var(--beige)' ? 'var(--sky-deep)' : 'var(--sky-deep)', fontSize: '1.8rem', marginBottom: '0.6rem' }}>
                 {c.label}
               </h3>
-              <p style={{ color: 'rgba(245,236,215,0.70)', lineHeight: '1.6', fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--charcoal)', opacity: 0.75, lineHeight: '1.6', fontSize: '0.95rem' }}>
                 {c.desc}
               </p>
-              <div style={{ marginTop: '1.2rem', fontSize: '0.82rem', color: c.color, opacity: 0.7, letterSpacing: '1px' }}>
+              <div style={{ marginTop: '1.2rem', fontSize: '0.82rem', color: 'var(--sky-deep)', opacity: 0.8, letterSpacing: '1px' }}>
                 DÉCOUVRIR →
               </div>
             </motion.div>
@@ -86,18 +86,18 @@ const Home: React.FC = () => (
       style={{
         padding: '2.5rem',
         borderRadius: '24px',
-        background: 'rgba(135,206,235,0.07)',
+        background: 'rgba(255,255,255,0.85)',
         backdropFilter: 'blur(40px) saturate(180%)',
         WebkitBackdropFilter: 'blur(40px) saturate(180%)',
-        border: '1px solid rgba(135,206,235,0.20)',
-        boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.15)',
+        border: '1px solid rgba(135,206,235,0.50)',
+        boxShadow: '0 8px 32px rgba(135,206,235,0.2), inset 0 1px 0 rgba(255,255,255,1)',
         marginBottom: '6rem',
       }}
     >
-      <p style={{ fontFamily: 'Amiri, serif', fontSize: '1.6rem', color: 'var(--beige)', lineHeight: '1.7', fontStyle: 'italic' }}>
+      <p style={{ fontFamily: 'Amiri, serif', fontSize: '1.6rem', color: 'var(--charcoal)', lineHeight: '1.7', fontStyle: 'italic' }}>
         « Na nga xam tay ne, yoon wii di yoonou Murit, ku la si ëpp daraja amatu ci »
       </p>
-      <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'rgba(212,238,255,0.6)' }}>
+      <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--sky-deep)' }}>
         Serigne Saliou Mbacké à Cheikh Serigne Béthio — 3 Novembre 2003
       </p>
     </motion.div>

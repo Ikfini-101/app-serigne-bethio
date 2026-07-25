@@ -45,7 +45,7 @@ const BottomMenu: React.FC = () => {
           <div style={{
             position: 'absolute', inset: '-10px',
             borderRadius: '60px',
-            background: 'radial-gradient(ellipse, rgba(135,206,235,0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse, rgba(135,206,235,0.4) 0%, transparent 70%)',
             filter: 'blur(14px)',
             pointerEvents: 'none',
           }} />
@@ -56,11 +56,11 @@ const BottomMenu: React.FC = () => {
             alignItems: 'center',
             padding: '14px 24px',
             borderRadius: '50px',
-            background: 'rgba(255,255,255,0.09)',
+            background: 'rgba(255,255,255,0.85)',
             backdropFilter: 'blur(40px) saturate(200%)',
             WebkitBackdropFilter: 'blur(40px) saturate(200%)',
-            border: '1px solid rgba(255,255,255,0.22)',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.18)',
+            border: '1px solid rgba(255,255,255,1)',
+            boxShadow: '0 8px 32px rgba(135,206,235,0.3), inset 0 1px 0 rgba(255,255,255,0.8)',
             position: 'relative',
             width: '100%',
           }}>
@@ -83,20 +83,21 @@ const BottomMenu: React.FC = () => {
                         style={{
                           position: 'absolute', inset: 0,
                           borderRadius: '16px',
-                          background: 'rgba(135,206,235,0.18)',
-                          border: '1px solid rgba(135,206,235,0.35)',
+                          background: 'rgba(135,206,235,0.25)',
+                          border: '1px solid rgba(135,206,235,0.5)',
                         }}
                         transition={{ type: 'spring' as const, stiffness: 350, damping: 30 }}
                       />
                     )}
                     <Icon
                       size={20}
-                      color={active ? 'var(--sky)' : 'rgba(245,236,215,0.65)'}
-                      style={{ position: 'relative', zIndex: 1 }}
+                      color={active ? 'var(--sky-deep)' : 'var(--charcoal)'}
+                      style={{ position: 'relative', zIndex: 1, opacity: active ? 1 : 0.5 }}
                     />
                     <span style={{
-                      fontSize: '0.70rem', fontWeight: active ? 600 : 400,
-                      color: active ? 'var(--sky)' : 'rgba(245,236,215,0.65)',
+                      fontSize: '0.70rem', fontWeight: active ? 700 : 500,
+                      color: active ? 'var(--sky-deep)' : 'var(--charcoal)',
+                      opacity: active ? 1 : 0.5,
                       letterSpacing: '0.5px', position: 'relative', zIndex: 1,
                       whiteSpace: 'nowrap',
                     }}>

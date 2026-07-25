@@ -31,7 +31,7 @@ const DomeMask: React.FC = () => (
     {/* Remplissage de fond page en-dessous de l'arche */}
     <path
       d="M0,340 C200,340 360,520 720,520 C1080,520 1240,340 1440,340 L1440,520 L0,520 Z"
-      fill="rgba(15,12,41,0.0)"
+      fill="rgba(253,251,247,1)"
     />
 
     {/* Bordure lumineuse de la coupole — effet liquid/glow */}
@@ -87,10 +87,10 @@ const ArchHeader: React.FC = () => {
         />
       </AnimatePresence>
 
-      {/* ── Overlay dégradé WCAG AAA ── */}
+      {/* ── Overlay dégradé ── */}
       <div style={{
         position: 'absolute', inset: 0, zIndex: 2,
-        background: 'linear-gradient(to bottom, rgba(10,8,30,0.25) 0%, rgba(10,8,30,0.65) 80%, rgba(15,12,41,0.95) 100%)',
+        background: 'linear-gradient(to bottom, rgba(253,251,247,0.1) 0%, rgba(253,251,247,0.6) 70%, rgba(253,251,247,1) 100%)',
       }} />
 
       {/* ── Titre — liquid morphism ── */}
@@ -110,20 +110,20 @@ const ArchHeader: React.FC = () => {
           maxWidth: '680px',
         }}
       >
-        {/* Panneau liquid morphism */}
+        {/* Panneau liquid morphism (Light) */}
         <div style={{
-          background: 'rgba(255,255,255,0.06)',
+          background: 'rgba(255,255,255,0.85)',
           backdropFilter: 'blur(24px) saturate(180%)',
           WebkitBackdropFilter: 'blur(24px) saturate(180%)',
-          border: '1px solid rgba(255,255,255,0.15)',
+          border: '1px solid rgba(255,255,255,1)',
           borderRadius: '24px',
           padding: '2rem 3rem',
-          boxShadow: '0 8px 32px rgba(135,206,235,0.15), inset 0 1px 0 rgba(255,255,255,0.2)',
+          boxShadow: '0 8px 32px rgba(135,206,235,0.4), inset 0 1px 0 rgba(255,255,255,0.8)',
         }}>
           <h1 className="shimmer-text serif" style={{ fontSize: 'clamp(1.8rem, 4vw, 3.2rem)', lineHeight: 1.2, marginBottom: '0.6rem' }}>
             Cheikh Serigne Béthio Thioune
           </h1>
-          <p style={{ color: 'rgba(212, 238, 255, 0.85)', fontSize: '1rem', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 300 }}>
+          <p style={{ color: 'var(--charcoal)', fontSize: '1rem', letterSpacing: '3px', textTransform: 'uppercase', fontWeight: 500 }}>
             La Voie du Thiant
           </p>
 
@@ -137,7 +137,7 @@ const ArchHeader: React.FC = () => {
                 transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 style={{
                   height: '8px', borderRadius: '4px',
-                  background: i === idx ? 'var(--sky)' : 'rgba(255,255,255,0.4)',
+                  background: i === idx ? 'var(--sky-deep)' : 'rgba(135,206,235,0.3)',
                   border: 'none', cursor: 'pointer', padding: 0,
                 }}
               />

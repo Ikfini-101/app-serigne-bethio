@@ -76,12 +76,12 @@ const BottomMenu: React.FC = () => {
             transition={{ duration: 1.5, ease: 'easeInOut' }}
             style={{
               position: 'fixed',
-              bottom: '28px',
+              bottom: '24px',
               left: 0,
               right: 0,
               margin: '0 auto',
-              width: '90%',
-              maxWidth: '680px',
+              width: '95%',
+              maxWidth: '860px',
               zIndex: 100,
               filter: 'url(#disintegrate-filter)'
             }}
@@ -89,18 +89,18 @@ const BottomMenu: React.FC = () => {
             {/* Glow halo */}
             <div style={{
               position: 'absolute', inset: '-10px',
-              borderRadius: '60px',
+              borderRadius: '100px',
               background: 'radial-gradient(ellipse, rgba(135,206,235,0.4) 0%, transparent 70%)',
-              filter: 'blur(14px)',
+              filter: 'blur(16px)',
               pointerEvents: 'none',
             }} />
 
             <nav style={{
               display: 'flex',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
               alignItems: 'center',
-              padding: '14px 24px',
-              borderRadius: '50px',
+              padding: '8px 12px',
+              borderRadius: '100px',
               background: 'rgba(255,255,255,0.85)',
               backdropFilter: 'blur(40px) saturate(200%)',
               WebkitBackdropFilter: 'blur(40px) saturate(200%)',
@@ -112,13 +112,13 @@ const BottomMenu: React.FC = () => {
               {NAV.map(({ path, label, icon: Icon }) => {
                 const active = location.pathname === path;
                 return (
-                  <Link key={path} to={path} style={{ textDecoration: 'none', flex: 1 }}>
+                  <Link key={path} to={path} style={{ textDecoration: 'none', flex: 1, display: 'flex', justifyContent: 'center' }}>
                     <motion.div
-                      whileHover={{ y: -4 }}
-                      whileTap={{ scale: 0.92 }}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.95 }}
                       style={{
-                        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px',
-                        padding: '6px 0', borderRadius: '16px',
+                        display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '8px',
+                        padding: '10px 18px', borderRadius: '100px',
                         cursor: 'pointer', position: 'relative',
                       }}
                     >
@@ -127,24 +127,25 @@ const BottomMenu: React.FC = () => {
                           layoutId="active-pill"
                           style={{
                             position: 'absolute', inset: 0,
-                            borderRadius: '16px',
+                            borderRadius: '100px',
                             background: 'rgba(135,206,235,0.25)',
-                            border: '1px solid rgba(135,206,235,0.5)',
+                            border: '1px solid rgba(135,206,235,0.6)',
+                            boxShadow: '0 4px 12px rgba(135,206,235,0.2)',
                           }}
-                          transition={{ type: 'spring' as const, stiffness: 350, damping: 30 }}
+                          transition={{ type: 'spring' as const, stiffness: 400, damping: 32 }}
                         />
                       )}
                       <Icon
-                        size={20}
+                        size={18}
                         color={active ? 'var(--sky-deep)' : 'var(--charcoal)'}
-                        style={{ position: 'relative', zIndex: 1, opacity: active ? 1 : 0.5 }}
+                        style={{ position: 'relative', zIndex: 1, opacity: active ? 1 : 0.6 }}
                       />
                       <span style={{
-                        fontSize: '0.70rem', fontWeight: active ? 700 : 500,
+                        fontSize: '0.75rem', fontWeight: active ? 700 : 500,
                         color: active ? 'var(--sky-deep)' : 'var(--charcoal)',
-                        opacity: active ? 1 : 0.5,
-                        letterSpacing: '0.5px', position: 'relative', zIndex: 1,
-                        whiteSpace: 'nowrap',
+                        opacity: active ? 1 : 0.6,
+                        letterSpacing: '0.8px', position: 'relative', zIndex: 1,
+                        whiteSpace: 'nowrap', textTransform: 'uppercase',
                       }}>
                         {label}
                       </span>

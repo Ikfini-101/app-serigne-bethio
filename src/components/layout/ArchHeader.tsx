@@ -94,18 +94,25 @@ const ArchHeader: React.FC = () => {
       }} />
 
       {/* ── Titre — liquid morphism ── */}
+      {/* Conteneur neutre pour le centrage (Framer Motion ne doit pas toucher au transform CSS) */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0, right: 0, bottom: 0,
+        zIndex: 3,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        pointerEvents: 'none',
+      }}>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 1.2, ease: 'easeOut' }}
+        transition={{ delay: 0.4, duration: 1.2 }}
         style={{
-          position: 'absolute',
-          top: '38%', left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 3,
           textAlign: 'center',
           width: '90%',
           maxWidth: '680px',
+          pointerEvents: 'all',
         }}
       >
         {/* Panneau liquid morphism */}
@@ -143,6 +150,7 @@ const ArchHeader: React.FC = () => {
           </div>
         </div>
       </motion.div>
+      </div>{/* /centering wrapper */}
 
       {/* ── Coupole mausolée renversée ── */}
       <DomeMask />

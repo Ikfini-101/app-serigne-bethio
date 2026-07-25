@@ -24,18 +24,29 @@ const BottomMenu: React.FC = () => {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
-          key="bottom-menu"
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 24 }}
-          style={{
-            position: 'fixed', bottom: '28px', left: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 100, width: '90%', maxWidth: '580px',
-          }}
-        >
+        /* Wrapper neutre full-width pour le centrage — Framer Motion n'y touche pas */
+        <div style={{
+          position: 'fixed',
+          bottom: '28px',
+          left: 0,
+          right: 0,
+          display: 'flex',
+          justifyContent: 'center',
+          zIndex: 100,
+          pointerEvents: 'none',
+        }}>
+          <motion.div
+            key="bottom-menu"
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: 'spring' as const, stiffness: 260, damping: 24 }}
+            style={{
+              width: '90%',
+              maxWidth: '580px',
+              pointerEvents: 'all',
+            }}
+          >
           {/* Glow halo */}
           <div style={{
             position: 'absolute', inset: '-8px',
@@ -97,7 +108,8 @@ const BottomMenu: React.FC = () => {
               );
             })}
           </nav>
-        </motion.div>
+          </motion.div>
+        </div>
       )}
     </AnimatePresence>
   );

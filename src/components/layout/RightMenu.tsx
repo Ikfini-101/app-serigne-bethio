@@ -53,13 +53,20 @@ const RightMenu: React.FC = () => {
             style={{
               position: 'absolute', right: '16px',
               width: '240px',
-              background: 'rgba(255,255,255,0.10)',
-              backdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
-              WebkitBackdropFilter: 'blur(60px) saturate(220%) brightness(1.05)',
-              border: '1px solid rgba(255,255,255,0.55)',
+              background: 'rgba(210, 240, 255, 0.06)',
+              backdropFilter: 'blur(80px) saturate(280%) brightness(1.08)',
+              WebkitBackdropFilter: 'blur(80px) saturate(280%) brightness(1.08)',
+              border: '1px solid rgba(255,255,255,0.25)',
               borderRadius: '24px',
               padding: '1.8rem 1.2rem',
-              boxShadow: '-4px 0 6px rgba(0,0,0,0.04), -8px 0 48px rgba(135,206,235,0.22), inset 0 1.5px 0 rgba(255,255,255,0.85), inset 0 -1px 0 rgba(135,206,235,0.12)',
+              boxShadow: [
+                '0 2px 4px rgba(0,0,0,0.03)',
+                '-4px 0 32px rgba(135,206,235,0.10)',
+                'inset 0 1.5px 0 rgba(255,255,255,0.95)',
+                'inset 0 -0.5px 0 rgba(135,206,235,0.20)',
+                'inset 1px 0 0 rgba(255,255,255,0.12)',
+                'inset -1px 0 0 rgba(255,255,255,0.12)',
+              ].join(', '),
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.2rem' }}>
